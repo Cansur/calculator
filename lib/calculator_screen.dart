@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_parse/flutter_parse.dart';
 import 'package:math_expressions/math_expressions.dart';
 
 class Calculator extends StatefulWidget {
@@ -39,7 +38,7 @@ class _CalculatorState extends State<Calculator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1d2630),
+      backgroundColor: const Color(0xFF1d2630),
       body: Column(
         children: [
           SizedBox(
@@ -48,7 +47,7 @@ class _CalculatorState extends State<Calculator> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Container(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   alignment: Alignment.centerRight,
                   child: Text(
                     userInput,
@@ -59,11 +58,11 @@ class _CalculatorState extends State<Calculator> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   alignment: Alignment.centerRight,
                   child: Text(
                     result,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 48,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -73,13 +72,13 @@ class _CalculatorState extends State<Calculator> {
               ],
             ),
           ),
-          Divider(color: Colors.white),
+          const Divider(color: Colors.white),
           Expanded(
               child: Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: GridView.builder(
                     itemCount: buttonList.length,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 4,
                       crossAxisSpacing: 12,
                       mainAxisSpacing: 12,
@@ -96,7 +95,7 @@ class _CalculatorState extends State<Calculator> {
   // ignore: non_constant_identifier_names
   Widget CustomButton(String text){
     return InkWell(
-      splashColor: Color(0xFF1d2630),
+      splashColor: const Color(0xFF1d2630),
       onTap: () {
         setState(() {
           handleButtons(text);
@@ -111,7 +110,7 @@ class _CalculatorState extends State<Calculator> {
               color: Colors.white.withOpacity(0.1),
               blurRadius: 4,
               spreadRadius: 0.5,
-              offset: Offset(-3, -3),
+              offset: const Offset(-3, -3),
             )
           ],
         ),
@@ -137,18 +136,18 @@ class _CalculatorState extends State<Calculator> {
         text == 'C' ||
         text == '(' ||
         text == ')') {
-      return Color.fromARGB(255, 252, 100, 100);
+      return const Color.fromARGB(255, 252, 100, 100);
     }
     return Colors.white;
   }
   getBgColor(String text){
     if (text == 'AC') {
-      return Color.fromARGB(255, 252, 100, 100);
+      return const Color.fromARGB(255, 252, 100, 100);
     }
     if (text == '=') {
-      return Color.fromARGB(255, 104, 204, 159);
+      return const Color.fromARGB(255, 104, 204, 159);
     }
-    return Color(0xFF1d2630);
+    return const Color(0xFF1d2630);
   }
 
   handleButtons(String text) {
